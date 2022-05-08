@@ -1,12 +1,15 @@
 fun main(){
-    var likes = 5461
+    var likes: Int = 5443
     var lastDigit = likes % 10
-    val odd = intArrayOf(1,3,5,7,9)
-    val even = intArrayOf(2,4,6,8)
-    println(lastDigit)
-    if (lastDigit in odd){
+    var twoLastDigit = likes % 100
+    if (lastDigit == 1 && twoLastDigit != 11){
         println("Понравилось ${likes} человеку!")
-    }else if(lastDigit in even){
+    }else if(twoLastDigit == 11){
+        println("Понравилось ${likes} людям!")
+    }else if (likes == 0){
+        println("Пока у вас лайки нету!")
+    }
+    else{
         println("Понравилось ${likes} людям!")
     }
 }
